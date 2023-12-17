@@ -1,0 +1,29 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://loclahost/mission-service"
+           targetNamespace="http://loclahost/mission-service" elementFormDefault="qualified">
+
+    <xs:element name="getMissionRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="id" type="xs:long"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMissionResponse">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="mission" type="tns:mission"/>
+            </xs:all>  
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="mission">
+        <xs:all>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/> 
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
