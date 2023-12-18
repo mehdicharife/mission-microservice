@@ -18,9 +18,29 @@
     </xs:element>
 
 
+    <xs:element name="createMissionRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="professorId" type="xs:long"/>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createMissionResponse">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="mission" type="tns:mission"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>  
+
+
     <xs:complexType name="mission">
         <xs:all>
             <xs:element name="id" type="xs:long"/>
+            <xs:element name="professorId" type="xs:long"/>
             <xs:element name="title" type="xs:string"/>
             <xs:element name="description" type="xs:string"/> 
         </xs:all>

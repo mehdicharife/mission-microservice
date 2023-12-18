@@ -4,4 +4,5 @@ import io.github.mehdicharife.missionservice.domain.Mission;
 
 public interface MissionService {
     Mission getMissionById(Long id);
+    Mission addMission(Mission mission);
 }

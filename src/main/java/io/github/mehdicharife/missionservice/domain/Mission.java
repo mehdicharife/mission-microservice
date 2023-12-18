@@ -12,6 +12,8 @@ public class Mission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long professorId;
+
     private String title;
 
     private String description;
@@ -23,6 +25,14 @@ public class Mission {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProfessorId() {
+        return this.professorId;
+    }
+
+    public void setProfessorId(Long professorId) {
+        this.professorId = professorId;
     }
 
     public String getTitle() {
