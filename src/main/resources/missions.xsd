@@ -37,13 +37,30 @@
     </xs:element>  
 
 
+    <xs:element name="getAllMissionsRequest">
+        <xs:complexType>
+        
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getAllMissionsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mission" type="tns:mission" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
     <xs:complexType name="mission">
         <xs:all>
             <xs:element name="id" type="xs:long"/>
-            <xs:element name="professorId" type="xs:long"/>
             <xs:element name="title" type="xs:string"/>
             <xs:element name="description" type="xs:string"/> 
         </xs:all>
     </xs:complexType>
+
+
 
 </xs:schema>

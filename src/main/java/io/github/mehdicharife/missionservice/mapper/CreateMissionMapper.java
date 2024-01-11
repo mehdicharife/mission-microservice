@@ -16,7 +16,6 @@ public interface CreateMissionMapper {
 
 
     @Mapping(source="id", target="mission.id")
-    @Mapping(source="professorId", target="mission.professorId")
     @Mapping(source="title", target="mission.title")
     @Mapping(source="description", target="mission.description")
     CreateMissionResponse toDto(Mission mission);
