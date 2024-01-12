@@ -17,11 +17,10 @@ public class MissionServiceImpl implements MissionService {
 
     @PostConstruct
     public void init() {
-        missions.add(new Mission(1L, "Mission 1", "Description for Mission 1"));
-        missions.add(new Mission(2L, "Mission 2", "Description for Mission 2"));
-        missions.add(new Mission(3L, "Mission 3", "Description for Mission 3"));
-        missions.add(new Mission(4L, "Mission 4", "Description for Mission 4"));
-        missions.add(new Mission(5L, "Mission 5", "Description for Mission 5"));
+        missions.add(new Mission((long) 9, "Mission 1", "Description for Mission 1"));
+        missions.add(new Mission((long) 3, "Mission 2", "Description for Mission 2"));
+        missions.add(new Mission((long) 6, "Mission 3", "Description for Mission 3"));
+
     }
 
     private MissionRepository missionRepository;
@@ -40,6 +39,7 @@ public class MissionServiceImpl implements MissionService {
 
     
     public Mission addMission(Mission mission) {
+        System.out.println(mission);
         return this.missionRepository.save(mission);
     }
 
