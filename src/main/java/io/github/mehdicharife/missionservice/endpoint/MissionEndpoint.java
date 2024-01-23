@@ -34,7 +34,6 @@ public class MissionEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart="getMissionRequest")
     @ResponsePayload
     public GetMissionResponse getMission(@RequestPayload GetMissionRequest getMissionRequest) {
-        System.out.println(getMissionRequest);
         Mission mission = this.missionService.getMissionById(getMissionRequest.getId());
         return GetMissionMapper.INSTANCE.toDto(mission);
     }
@@ -43,14 +42,15 @@ public class MissionEndpoint {
     @ResponsePayload
     public CreateMissionResponse createMission(@RequestPayload CreateMissionRequest createMissionRequest) {
         Mission mission = CreateMissionMapper.INSTANCE.fromDto(createMissionRequest);
-        this.missionService.addMission(mission);
-        return CreateMissionMapper.INSTANCE.toDto(mission);
+        Mission savedMission = this.missionService.addMission(mission);
+        return CreateMissionMapper.INSTANCE.toDto(savedMission);
     }
 
     @PayloadRoot(namespace= NAMESPACE_URI, localPart="getAllMissionsRequest")
     @ResponsePayload
     public GetAllMissionsResponse getAllMissions(@RequestPayload GetAllMissionsRequest getAllMissionsRequest) {
         List<Mission> missions = this.missionService.getAllMissions();
+        
         GetAllMissionsResponse response = new GetAllMissionsResponse();
         List<io.spring.guides.gs_producing_web_service.Mission> list = response.getMission();
         for(int k = 0; k < missions.size(); k++) {
