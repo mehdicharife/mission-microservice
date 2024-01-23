@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM maven:3.8.4-openjdk-11
 VOLUME /tmp
 COPY . /app
 WORKDIR /app
